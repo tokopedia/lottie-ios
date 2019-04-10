@@ -403,7 +403,7 @@ static NSMutableDictionary *colorNameCache = nil;
 
 #pragma mark UIColor_Expanded initialization
 
-+ (void)load {
+__attribute__((constructor)) static void initialize_UIColor(void) {
 	colorNameCache = [[NSMutableDictionary alloc] init];
 }
 
